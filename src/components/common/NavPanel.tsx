@@ -11,6 +11,7 @@ function NavPanel() {
   const router = useRouter();
   const [isHydrated, setIsHydrated] = useState(false);
   const isPreview = searchParams.get("isPreview");
+  const isEdit = searchParams.get("isEdit");
 
   useEffect(() => {
     setIsHydrated(true);
@@ -45,7 +46,7 @@ function NavPanel() {
       </div>
     );
 
-  return isPreview ? (
+  return isPreview || isEdit ? (
     <Fragment></Fragment>
   ) : (
     <div className="flex items-center gap-[5px]">

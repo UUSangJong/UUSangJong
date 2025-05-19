@@ -67,6 +67,9 @@ export default function DetailPageUI() {
 
   if (!postId) return <div>postId가 없습니다. URL을 확인하세요.</div>;
   if (!postData) return <div>로딩 중...</div>;
+
+  // console.log("writerEmail", postData.email);
+
   return (
     <div className="relative w-full min-h-screen px-4 bg-[#fefdf6]">
       <div className="pt-[5vh] flex flex-col items-center gap-y-10 xl:flex-row justify-evenly ">
@@ -80,6 +83,7 @@ export default function DetailPageUI() {
           instantPrice={postData?.instant_price}
           endDate={postData?.end_date}
           isSold={postData?.is_sold}
+          writerId={postData.user_id}
           userId={postData?.user_id}
           nowPrice={nowPrice}
         />

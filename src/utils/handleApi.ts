@@ -9,13 +9,17 @@ export const handleApi = async <T>(fn: () => Promise<T>) => {
 
     if (isAxiosError(error)) {
       const axiosError = error as AxiosError;
-      const responseMessage = axiosError.response?.data;
+      const responseMessage = axiosError.response;
 
       // 문자열이면 그대로, 객체면 message 속성 사용
-      if (typeof responseMessage === "string") {
-        msg = responseMessage;
-      } else if (typeof responseMessage === "object" && responseMessage !== null) {
-        msg = (responseMessage as any).message || msg;
+      if (typeof responseMessage?.data === "string") {
+        msg = responseMessage?.data;
+      } else if (
+        typeof responseMessage?.data === "object" &&
+        responseMessage?.data !== null &&
+        Object.hasOwn(responseMessage.data, "message")
+      ) {
+        msg = (responseMessage.data as AxiosError).message || msg;
       }
     } else if (error instanceof Error) {
       msg = error.message;
@@ -25,6 +29,6 @@ export const handleApi = async <T>(fn: () => Promise<T>) => {
   }
 };
 
-function isAxiosError(error: any): error is AxiosError {
-  return !!(error.isAxiosError);
+function isAxiosError(error: unknown): error is AxiosError {
+  return !!(error as AxiosError).isAxiosError;
 }

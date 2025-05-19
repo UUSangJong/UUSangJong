@@ -90,7 +90,7 @@ const AlertDialogAction = React.forwardRef<
     ref={ref}
     className={cn(
       buttonVariants(),
-      "bg-[#4C4528] hover:bg-[#7a6838] cursor-pointer text-white mt-2 sm:mt-0",
+      "bg-[#BA1A1A] hover:bg-[#7a6838] cursor-pointer text-white mt-2 sm:mt-0",
       className
     )}
     {...props}
@@ -106,7 +106,7 @@ const AlertDialogCancel = React.forwardRef<
     ref={ref}
     className={cn(
       buttonVariants({ variant: "outline" }),
-      "bg-[#fefdf6] border-[#4C4528] hover:bg-[#eeeeee] cursor-pointer mt-2 sm:mt-0",
+      "bg-[#222222] border-[#222222] text-[#eeeeee] hover:bg-[#eeeeee] hover:text-[#222222] cursor-pointer mt-2 sm:mt-0",
       className
     )}
     {...props}

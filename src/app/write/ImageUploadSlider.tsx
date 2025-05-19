@@ -3,12 +3,7 @@ import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 
-export default function ImageUloadSlider({
-  images,
-}: {
-  images: string[];
-  onClickDeleteImage: (index: number) => void;
-}) {
+export default function ImageUloadSlider({ images }: { images: string[] }) {
   return (
     <Swiper
       slidesPerView={"auto"}

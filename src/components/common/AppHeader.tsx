@@ -7,7 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "../ui/navigation-menu";
-import { CircleUserRound, LogIn, LogOut, SearchIcon } from "lucide-react";
+import { CircleUserRound, LogOut, SearchIcon } from "lucide-react";
 import { Dialog, DialogTrigger } from "../ui/dialog";
 import DialogWrapper from "./modal/DialogWrapper";
 import SearchModal from "./modal/SearchModal";
@@ -74,7 +74,9 @@ function AppHeader({ isSticky }: { isSticky?: boolean }) {
       <header className={`${isSticky && "sticky"} top-0 z-10 w-full bg-[#fefdf6] shadow-md`}>
         <div className="container mx-auto py-6 flex flex-col items-center relative">
           {/* Logo */}
-          <h1 className="font-['Julius_Sans_One',Helvetica] text-4xl sm:text-5xl text-black mb-6">UUSJ</h1>
+          <h1 className="font-['Julius_Sans_One',Helvetica] text-4xl sm:text-5xl text-black mb-6">
+            UUSJ
+          </h1>
 
           {/* Navigation */}
           <NavigationMenu className="mx-auto">

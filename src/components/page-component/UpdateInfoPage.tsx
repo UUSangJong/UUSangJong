@@ -45,7 +45,7 @@ export default function UpdateInfoPage() {
 
     for (const key in form) {
       const value = form[key as keyof typeof form];
-      const trimmed = value ? value.trim() : "";
+      const trimmed = value ? (value as string).trim() : "";
       const isChanged = trimmed !== original[key as keyof typeof original];
       if (trimmed !== "" && (key === "password" || isChanged)) {
         updateFields[key] = trimmed;

@@ -10,7 +10,7 @@ function useInfiniteScroll({ hasNextPage, fetchNextPage }: IntersectionObserverP
   const ref = useRef<HTMLDivElement>(null);
 
   const handleIntersect: IntersectionObserverCallback = useCallback(
-    ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    ([entry]: IntersectionObserverEntry[]) => {
       if (entry?.isIntersecting && hasNextPage) {
         fetchNextPage();
       }

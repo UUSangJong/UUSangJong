@@ -6,13 +6,10 @@ import SignupModal from "./SignupModal";
 
 function DialogWrapper() {
   const [isFirst, setIsFirst] = useState<boolean>(false);
-  const handleChangeModal = useCallback(
-    (e: MouseEvent<HTMLButtonElement>) => {
-      setIsFirst((prev) => !prev);
-      console.log("QRQ", isFirst);
-    },
-    [isFirst]
-  );
+  const handleChangeModal = useCallback((e?: MouseEvent<HTMLButtonElement>) => {
+    setIsFirst((prev) => !prev);
+    console.log(e);
+  }, []);
   const modalContent = useMemo(() => {
     return isFirst ? (
       <SignupModal handleChangeModal={handleChangeModal} />
