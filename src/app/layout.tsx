@@ -5,7 +5,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import Providers from "./providers";
 import { Toaster } from "@/components/ui/sonner";
-import MidnightRefresher from "@/components/MidnightRefresher";
+import NoonRefresher from "@/components/NoonRefresher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           <Toaster richColors />
-          <MidnightRefresher />
+          <NoonRefresher />
           {children}
         </Providers>
       </body>
